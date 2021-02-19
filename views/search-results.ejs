@@ -1,0 +1,26 @@
+<div class="m-3">
+    <ul style="font-size: 22px;" class="list-group list-group-horizontal-xxl">
+        <% if (searchResults) {%>
+            <% if (!searchResults.wikis.length==0) { %>
+                <h1>Here are the results for "<%= searchResults.queryString %>"</h1>
+                <% for(let i=0; i < searchResults.wikis.length; i++) {%>
+                    <li class="list-group-item">
+                        <a href="/wiki/<%=searchResults.wikis[i].url%>">
+                            <%=searchResults.wikis[i].title%>
+                        </a>
+                    </li>
+                    <% } %>
+                        <% } else { %>
+                            <h1>No results found for "<%= searchResults.queryString %>"</h1>
+                            <% } %>
+                                <% } else { %>
+                                    <h1>
+                                        Search below for something to be able to see any results...
+                                    </h1>
+                                    <form action="/search" method="POST" class="d-flex">
+                                        <input type="text" name="wiki_search" class="form-control col-11"><button
+                                            type="submit" class="btn btn-primary col-1 ml-1">Search</button>
+                                    </form>
+                                    <% } %>
+    </ul>
+</div>

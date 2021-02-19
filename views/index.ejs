@@ -1,0 +1,24 @@
+<% if (message) { %>
+    <div style="text-align: center;" class="alert alert-<%= message.type %>">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>
+            <%= message.intro %>
+        </strong>
+        <%= message.message %>
+    </div>
+    <% } %>
+        <div class="m-3">
+            <h1>Wikis</h1>
+            <ul style="font-size: 22px;" class="list-group list-group-horizontal-xxl">
+                <% for(let i=0; i < wikis.length; i++) {%>
+                    <li class="list-group-item">
+                        <a href="/wiki/<%=wikis[i].url%>">
+                            <%=wikis[i].title%>
+                        </a>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+        <script>
+            document.getElementById('home').classList.add('active')
+        </script>
