@@ -9,8 +9,8 @@ const mongoose = require('mongoose')
 const md = require('markdown-it')();
 
 // Connect to mongoose
-const url = 'mongodb://localhost:27017';
-const dbName = 'Wiki'
+const url = 'mongodb://localhost:27017'; // Local DataBase URL
+const dbName = 'Wiki' // DataBase Name
 mongoose.connect(`${url}/${dbName}`, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // Static Files
